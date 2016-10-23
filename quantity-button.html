@@ -1,0 +1,30 @@
+<link rel="import" href="../paper-button/paper-button.html">
+<!--
+  `<quantity-button></quantity-button>` Wrap this around a something with a quantity
+  @demo demo.html
+-->
+<dom-module id="quantity-button">
+  <template>
+        <style>:host {display:inline-block;}</style>
+        <template is="dom-if" if="{{!quantity}}"><span style="width:5.14em;display:inline-block"></span></template>
+        <template is="dom-if" if="{{quantity}}"><paper-button on-tap="minus">-</paper-button></template><paper-button on-tap="plus"><template is="dom-if" if="{{quantity}}">{{quantity}} x </template><content></content></paper-button>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "quantity-button",
+    properties:{
+      quantity:{
+        type:Number,
+        value:0,
+        notify:true,
+      },
+    },
+    plus: function(undefined){
+      this.quantity++
+    },
+    minus: function(undefined){
+      this.quantity--
+    },
+  })
+</script>

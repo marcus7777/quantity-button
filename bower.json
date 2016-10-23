@@ -1,8 +1,8 @@
 {
-  "name": "qty-button",
+  "name": "quantity-button",
   "version": "1.0.0",
-  "description": "\n    \n    \n    \n  ",
-  "main": "qty-button.html",
+  "description": "",
+  "main": "quantity-button.html",
   "keywords": [
     "polymer",
     "web-components"
