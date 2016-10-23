@@ -1,0 +1,13 @@
+{
+  "name": "qty-button",
+  "version": "1.0.0",
+  "description": "\n    \n    \n    \n  ",
+  "main": "qty-button.html",
+  "keywords": [
+    "polymer",
+    "web-components"
+  ],
+  "dependencies": {
+    "paper-button": "PolymerElements/paper-button#~1.0.14"
+  }
+}
