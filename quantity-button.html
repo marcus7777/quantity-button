@@ -8,25 +8,27 @@
 <dom-module id="quantity-button">
   <template>
      <style>:host {display:inline-block;}</style>
-     <template is="dom-if" if="{{!quantity}}"><span style="width:5.14em;display:inline-block"></span></template>
-     <template is="dom-if" if="{{quantity}}"><paper-button on-tap="minus">-</paper-button></template><paper-button on-tap="plus"><template is="dom-if" if="{{quantity}}">{{quantity}} x </template><content></content></paper-button>
+     <template is="dom-if" if="{{!value}}"><span style="width:5.14em;display:inline-block"></span></template>
+     <template is="dom-if" if="{{value}}"><paper-button on-tap="minus">-</paper-button></template><paper-button on-tap="plus"><template is="dom-if" if="{{value}}">{{value}} x </template><div id="text"><content></content></div></paper-button>
   </template>
 </dom-module>
 <script>
   Polymer({
     is: "quantity-button",
     properties:{
-      quantity:{
+      value:{
         type:Number,
         value:0,
         notify:true,
       },
     },
-    plus: function(undefined){
-      this.quantity++
+    plus: function(){
+      this.value++
+      this.$.text.innerText = pluralize(this.$.text.innerText,this.value)
     },
-    minus: function(undefined){
+    minus: function(){
       this.quantity--
+      this.$.text.innerText = pluralize(this.$.text.innerText,this.value)
     },
   })
 </script>
