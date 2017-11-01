@@ -9,7 +9,7 @@
   <template>
      <style>:host {display:inline-block;}</style>
      <template is="dom-if" if="{{!value}}"><span style="width:5.14em;display:inline-block"></span></template>
-     <template is="dom-if" if="{{value}}"><paper-button on-tap="minus">-</paper-button></template><paper-button on-tap="plus"><template is="dom-if" if="{{value}}">{{value}} x </template><div id="text"><content></content></div></paper-button>
+     <template is="dom-if" if="{{value}}"><paper-button on-tap="minus">-</paper-button></template><paper-button on-tap="plus"><template is="dom-if" if="{{value}}">{{value}} x </template> <div id="text"><content></content></div></paper-button>
   </template>
 </dom-module>
 <script>
